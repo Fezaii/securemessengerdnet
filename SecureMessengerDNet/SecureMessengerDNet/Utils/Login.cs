@@ -17,37 +17,46 @@ namespace Messages.NET.Utils
     public partial class Login : Window
     {
         /*
-        Registration registration = new Registration();
-        Welcome welcome = new Welcome();
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-                string email = textBoxEmail.Text;
-                string password = passwordBox1.Password;
-                SqlConnection con = new SqlConnection("Data Source=TESTPURU;Initial Catalog=Data;User ID=sa;Password=wintellect");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from Registration where Email='" + email + "'  and password='" + password + "'", con);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = cmd;
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet);
-                if (dataSet.Tables[0].Rows.Count > 0)
-                {
-                    string username = dataSet.Tables[0].Rows[0]["FirstName"].ToString() + " " + dataSet.Tables[0].Rows[0]["LastName"].ToString();
-                    welcome.TextBlockName.Text = username;//Sending value from one form to another form.  
-                    welcome.Show();
-                    Close();
-                }
-                else
-                {
-                    errormessage.Text = "Sorry! Please enter existing emailid/password.";
-                }
-                con.Close();
-        }
-        private void buttonRegister_Click(object sender, RoutedEventArgs e)
-        {
-            registration.Show();
-            Close();
+                  // Create a request using a URL that can receive a post.   
+            WebRequest request = WebRequest.Create(" http://baobab.tokidev.fr/login");
+            // Set the Method property of the request to POST.  
+            request.Method = "POST";
+
+            // Create POST data and convert it to a byte array.  
+            string postData = "This is a test that posts this string to a Web server.";
+            byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+
+            // Set the ContentType property of the WebRequest.  
+            request.ContentType = "application/x-www-form-urlencoded";
+            // Set the ContentLength property of the WebRequest.  
+            request.ContentLength = byteArray.Length;
+
+            // Get the request stream.  
+            Stream dataStream = request.GetRequestStream();
+            // Write the data to the request stream.  
+            dataStream.Write(byteArray, 0, byteArray.Length);
+            // Close the Stream object.  
+            dataStream.Close();
+
+            // Get the response.  
+            WebResponse response = request.GetResponse();
+            // Display the status.  
+            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+
+            // Get the stream containing content returned by the server.  
+            // The using block ensures the stream is automatically closed.
+            using (dataStream = response.GetResponseStream())
+            {
+                // Open the stream using a StreamReader for easy access.  
+                StreamReader reader = new StreamReader(dataStream);
+                // Read the content.  
+                string responseFromServer = reader.ReadToEnd();
+                // Display the content.  
+                Console.WriteLine(responseFromServer);
+            }
+
+            // Close the response.  
+            response.Close();
         }*/
     }
 }

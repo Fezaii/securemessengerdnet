@@ -96,10 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Binding\Loginmodel.cs" />
     <Compile Include="Utils\Login.cs" />
     <Compile Include="Utils\Database.cs" />
     <Compile Include="Utils\Encryption.cs" />
-    <Compile Include="Utils\WebService.cs" />
     <Compile Include="Binding\AppCommands.cs" />
     <Compile Include="Views\NewContact.xaml.cs">
       <DependentUpon>NewContact.xaml</DependentUpon>

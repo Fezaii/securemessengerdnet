@@ -118,7 +118,7 @@ namespace SecureMessengerDNet
             #endregion
 
             #region Commands initialization
-
+            ConnexionCommand = new AppCommands(Connexion);
             SendMessageCommand = new AppCommands(SendMessage);
             DeleteContactCommand = new AppCommands(DeleteContact);
             OpenNewContactCommand = new AppCommands(OpenNewContact);
@@ -181,6 +181,14 @@ namespace SecureMessengerDNet
             NewContact newContact = new NewContact();
             newContact.Show();
         }
+        public ICommand ConnexionCommand { get; set; }
+
+        private void Connexion()
+        {
+            NewContact newContact = new NewContact();
+            newContact.Show();
+        }
+
 
         #endregion
 

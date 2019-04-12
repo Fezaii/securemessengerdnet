@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Messages.NET.Views
+namespace SecureMessengerDNet
 {
     /// <summary>
     /// Logique d'interaction pour Login.xaml
     /// </summary>
-    public partial class Login: Page
+    public partial class Login: Window
     {
         public Login()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }

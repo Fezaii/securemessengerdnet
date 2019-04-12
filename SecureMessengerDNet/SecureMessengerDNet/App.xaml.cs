@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Messages.NET
+namespace SecureMessengerDNet
 {
     /// <summary>
     /// Logique d'interaction pour App.xaml
@@ -19,6 +19,8 @@ namespace Messages.NET
         {
             base.OnStartup(e);
             var login = new Login();
+            var context = new Loginmodel();
+            login.DataContext = context;
             login.Show();
             //var app = new Window1();
             //var context = new ViewModel();

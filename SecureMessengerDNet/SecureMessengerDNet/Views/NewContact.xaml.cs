@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Messages.NET
+namespace SecureMessengerDNet
 {
     /// <summary>
     /// Interaction logic for NewPlayer.xaml
@@ -24,9 +24,5 @@ namespace Messages.NET
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
