@@ -82,3 +82,6 @@ D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerD
 D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerDNet\obj\Debug\SecureMessengerDNet.exe
 D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerDNet\obj\Debug\SecureMessengerDNet.pdb
 D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerDNet\obj\Debug\SecureMessengerDNet.csprojAssemblyReference.cache
+D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerDNet\bin\Debug\Newtonsoft.Json.dll
+D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerDNet\bin\Debug\Newtonsoft.Json.pdb
+D:\Users\afezai\Desktop\secureMessengerDNet\SecureMessengerDNet\SecureMessengerDNet\bin\Debug\Newtonsoft.Json.xml

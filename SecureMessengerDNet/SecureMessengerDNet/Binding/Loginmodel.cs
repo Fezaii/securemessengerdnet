@@ -14,6 +14,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
 
@@ -83,7 +84,10 @@ namespace SecureMessengerDNet
 
         private void Connexion()
         {
-
+            Dictionary<string, string> jsonValues = new Dictionary<string, string>();
+            jsonValues.Add("username", "admin");
+            jsonValues.Add("password", "password");
+          
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://baobab.tokidev.fr/api/login");
             client.DefaultRequestHeaders
@@ -91,16 +95,18 @@ namespace SecureMessengerDNet
                   .Add(new MediaTypeWithQualityHeaderValue("application/json"));//ACCEPT header
 
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "http://baobab.tokidev.fr/api/login");
-            request.Content = new StringContent("{\"username\":\"admin\",\"password\":password}",
+            request.Content = new StringContent(JsonConvert.SerializeObject(jsonValues),
                                                 Encoding.UTF8,
-                                                "application/json");//CONTENT-TYPE header
+                                                "application/json");
 
             client.SendAsync(request)
                   .ContinueWith(responseTask =>
                   {
-                      Console.WriteLine("Response: {0}", responseTask.Result.Content.ReadAsStringAsync().Result);
+                  //responseTask.Result.EnsureSuccessStatusCode();
+
+                  Console.WriteLine("Response: {0}",JsonConvert.DeserializeObject<object>(responseTask.Result.Content.ReadAsStringAsync().Result));
                   });
-   
+
         }
 
 
